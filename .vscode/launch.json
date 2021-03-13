@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GithubClientApplication<github-client>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.com.desafio.githubclient.GithubClientApplication",
+            "projectName": "github-client",
+            "args": ""
+        }
+    ]
+}
