@@ -6,18 +6,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document(collection = "users")
-public class Users {
+@Document(collection = "tags")
+public class Tag {
 
     @Id
     private String id;
     private String name;
-    private String login;
-    private String password;
-
-    public Users(String name, String login, String password) {
+    private String gitHubUser;
+    
+    public Tag(String name, String gitHubUser) {
         this.name = name;
-        this.login = login;
-        this.password = password;
+        this.gitHubUser = gitHubUser;
     }
 }
