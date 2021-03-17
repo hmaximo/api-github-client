@@ -34,9 +34,9 @@ public class UserController {
         return userRepository.findAll();
     }
 
-    @GetMapping("/{userEmail}")
-    public ResponseEntity<User> search(@PathVariable String userEmail){
-        Optional<User> user = userRepository.findByEmail(userEmail);
+    @GetMapping("/{gitHubUser}")
+    public ResponseEntity<User> search(@PathVariable String gitHubUser){
+        Optional<User> user = userRepository.findByGitHubUser(gitHubUser);
         if (user.isPresent()) {
             return ResponseEntity.ok(user.get());
         }
