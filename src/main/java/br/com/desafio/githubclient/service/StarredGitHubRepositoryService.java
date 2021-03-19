@@ -36,4 +36,26 @@ public class StarredGitHubRepositoryService {
 
         return starredGitHubRepositoryRepository.saveAll(starredRepositoriesList);
     }
+
+    public StarredGitHubRepository addTagToRepository(String repositoryId, String tagName) {
+        StarredGitHubRepository repository = starredGitHubRepositoryRepository.findById(repositoryId).get();
+        List<String> tagsList = repository.getTags();
+        if (!tagsList.contains(tagName)) {
+                repository.setTags(tagName);
+        }
+        return repository;
+    }
+
+    public List<StarredGitHubRepository> searchByTag(String tagName) {
+        return starredGitHubRepositoryRepository.findByTags(tagName);
+    }
+
+    public StarredGitHubRepository deleteTagOfRepository(String repositoryId, String tagName) {
+        StarredGitHubRepository repository = starredGitHubRepositoryRepository.findById(repositoryId).get();
+        List<String> tagsList = repository.getTags();
+        if (tagsList.contains(tagName)) {
+            tagsList.remove(tagName);
+        }
+        return repository;
+    }
 }

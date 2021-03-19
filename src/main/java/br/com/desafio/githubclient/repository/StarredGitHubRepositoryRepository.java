@@ -11,4 +11,6 @@ import br.com.desafio.githubclient.entity.StarredGitHubRepository;
 public interface StarredGitHubRepositoryRepository extends MongoRepository<StarredGitHubRepository, String> {
     
     List<StarredGitHubRepository> findByGitHubUser(String gitHubUser);
+
+    List<StarredGitHubRepository> findByTags(String tagName);
 }
